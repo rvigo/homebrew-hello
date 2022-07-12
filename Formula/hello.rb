@@ -5,18 +5,18 @@ class Hello < Formula
   
     on_macos do
       if Hardware::CPU.arm?
-        url "https://github.com/rvigo/hello/releases/download/v1.5.0/hello-aarch64-apple-darwin.zip"
+        url "https://github.com/rvigo/hello/releases/download/v1.6.2/hello-aarch64-apple-darwin.zip"
         sha256 "d3fc661835263fd2ed4f903e8b416f2492344c9be8695ce08b59bcdb69f756ac"
       end 
       if Hardware::CPU.intel?
-        url "https://github.com/rvigo/hello/releases/download/v1.5.0/hello-x86_64-apple-darwin.zip"
+        url "https://github.com/rvigo/hello/releases/download/v1.6.2/hello-x86_64-apple-darwin.zip"
         sha256 "446045424517ccac1d035bae5221a731f4918d1159f3b8798e7d4dffd35adaed"
       end 
     end
 
     on_linux do
       if Hardware::CPU.arm?
-        url "https://github.com/rvigo/hello/releases/download/v1.5.0/hello-aarch64-unknown-linux-gnu.tar.gz"
+        url "https://github.com/rvigo/hello/releases/download/v1.6.2/hello-aarch64-unknown-linux-gnu.tar.gz"
         sha256 "c99210787e4f7b0a6f60bc5dfdeff76e93ddbd99a9a0e39efa58e29ffde5b137"
       end 
       if Hardware::CPU.intel?
