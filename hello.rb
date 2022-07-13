@@ -5,20 +5,20 @@
 class Hello < Formula
   desc "hello app"
   homepage "https://github.com/rvigo/homebrew-hello"
-  version "1.6.5"
+  version "1.6.6"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/rvigo/hello/releases/download/v1.6.5/hello_1.6.5_Darwin_x86_64.tar.gz"
-      sha256 "49e6b5539f979edec23cb473288e59d666497c25b6d302c3ddf1944b8bbd175e"
+      url "https://github.com/rvigo/hello/releases/download/v1.6.6/hello_1.6.6_Darwin_x86_64.tar.gz"
+      sha256 "0b8374438b065f6a6b3d7f4e23660279072dc1eb3f520cad544b55e160843f73"
 
       def install
         bin.install "hello"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/rvigo/hello/releases/download/v1.6.5/hello_1.6.5_Darwin_arm64.tar.gz"
-      sha256 "d16a7bfb14bade04a593d63c489f30accd228080763dd43e1cb432655a10e0e7"
+      url "https://github.com/rvigo/hello/releases/download/v1.6.6/hello_1.6.6_Darwin_arm64.tar.gz"
+      sha256 "fb4dc8f20067bb146bd8e76583eb496efb20e10602b91844fc53cce794c9b29d"
 
       def install
         bin.install "hello"
@@ -28,16 +28,16 @@ class Hello < Formula
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/rvigo/hello/releases/download/v1.6.5/hello_1.6.5_Linux_x86_64.tar.gz"
-      sha256 "3f562f0f5861d372959f143c62955d31d46e2936a46dcef91df9d3a564c28023"
+      url "https://github.com/rvigo/hello/releases/download/v1.6.6/hello_1.6.6_Linux_x86_64.tar.gz"
+      sha256 "e216017b76d8eb5675d3669bac297b6b3dda93b738b8be638093a0fc81f4d29e"
 
       def install
         bin.install "hello"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/rvigo/hello/releases/download/v1.6.5/hello_1.6.5_Linux_arm64.tar.gz"
-      sha256 "39fd378ee0a70df001326c1a516984b28062e089816af2e3f9531afc57c102c6"
+      url "https://github.com/rvigo/hello/releases/download/v1.6.6/hello_1.6.6_Linux_arm64.tar.gz"
+      sha256 "daba0fc783264355566660be6bd700d8bc4c084d8530e958a0cc23cfd06c6447"
 
       def install
         bin.install "hello"
