@@ -8,17 +8,17 @@ class Hello < Formula
   version "1.6.7"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/rvigo/hello/releases/download/v1.6.7/hello_1.6.7_darwin_arm64.tar.gz"
-      sha256 "904278bc2e5a89a9ecdd00a28abe300d162eb9a421ed9b96cd5b39ca30402ab9"
+    if Hardware::CPU.intel?
+      url "https://github.com/rvigo/hello/releases/download/v1.6.7/hello_1.6.7_darwin_x86_64.tar.gz"
+      sha256 "b59fe6aa858091d8c838b5c32d61f7ba0105f196f07244938eb07e2619dc5f72"
 
       def install
         bin.install "hello"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/rvigo/hello/releases/download/v1.6.7/hello_1.6.7_darwin_x86_64.tar.gz"
-      sha256 "ef1daed6f405085791c56b2ff190bf02c83be9231982399b5d106ad3e5658318"
+    if Hardware::CPU.arm?
+      url "https://github.com/rvigo/hello/releases/download/v1.6.7/hello_1.6.7_darwin_arm64.tar.gz"
+      sha256 "b229b492258e414682dad18780588af0475d4ab538b44f2af32cc8c13ecc24b8"
 
       def install
         bin.install "hello"
@@ -27,17 +27,17 @@ class Hello < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/rvigo/hello/releases/download/v1.6.7/hello_1.6.7_linux_x86_64.tar.gz"
-      sha256 "6b3d059400e92c704989729c906f79ba26e3ef858e8a501a3b74257e5e2aa838"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/rvigo/hello/releases/download/v1.6.7/hello_1.6.7_linux_arm64.tar.gz"
+      sha256 "2514b75ecf9fe96ee54d21dc554c0381234800431414749430f923636535ae64"
 
       def install
         bin.install "hello"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/rvigo/hello/releases/download/v1.6.7/hello_1.6.7_linux_arm64.tar.gz"
-      sha256 "7ddb1210e80f68ece325d6f0f8bda75649ae39cc69e770a4bf51145f5cb07161"
+    if Hardware::CPU.intel?
+      url "https://github.com/rvigo/hello/releases/download/v1.6.7/hello_1.6.7_linux_x86_64.tar.gz"
+      sha256 "1f0324e43cfb36992c673a0f2438ecaa2e3d452221de9acc90cc054fb846e16c"
 
       def install
         bin.install "hello"
