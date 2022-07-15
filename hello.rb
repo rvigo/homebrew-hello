@@ -8,17 +8,17 @@ class Hello < Formula
   version "1.6.7"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/rvigo/hello/releases/download/v1.6.7/hello_1.6.7_darwin_x86_64.tar.gz"
-      sha256 "f10a013f46e30162b578f87185e1f4534046c48bb5bc3e025e2d7fa989e9d600"
+    if Hardware::CPU.arm?
+      url "https://github.com/rvigo/hello/releases/download/v1.6.7/hello_1.6.7_darwin_arm64.tar.gz"
+      sha256 "904278bc2e5a89a9ecdd00a28abe300d162eb9a421ed9b96cd5b39ca30402ab9"
 
       def install
         bin.install "hello"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/rvigo/hello/releases/download/v1.6.7/hello_1.6.7_darwin_arm64.tar.gz"
-      sha256 "5aca4df98941d71bbe92a976a1464af854c36b0348bd324beda4545393f27066"
+    if Hardware::CPU.intel?
+      url "https://github.com/rvigo/hello/releases/download/v1.6.7/hello_1.6.7_darwin_x86_64.tar.gz"
+      sha256 "ef1daed6f405085791c56b2ff190bf02c83be9231982399b5d106ad3e5658318"
 
       def install
         bin.install "hello"
@@ -29,7 +29,7 @@ class Hello < Formula
   on_linux do
     if Hardware::CPU.intel?
       url "https://github.com/rvigo/hello/releases/download/v1.6.7/hello_1.6.7_linux_x86_64.tar.gz"
-      sha256 "c65aa72029e09b514c26ed0af13b0920b7e58d8c7d5818ea58bfad258b2bc672"
+      sha256 "6b3d059400e92c704989729c906f79ba26e3ef858e8a501a3b74257e5e2aa838"
 
       def install
         bin.install "hello"
@@ -37,7 +37,7 @@ class Hello < Formula
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/rvigo/hello/releases/download/v1.6.7/hello_1.6.7_linux_arm64.tar.gz"
-      sha256 "284fe74a4485c865e1ed37b13fd193530e8218c7a48bffd52e5e0e0621108a8b"
+      sha256 "7ddb1210e80f68ece325d6f0f8bda75649ae39cc69e770a4bf51145f5cb07161"
 
       def install
         bin.install "hello"
