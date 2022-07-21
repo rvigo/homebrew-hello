@@ -5,20 +5,20 @@
 class Hello < Formula
   desc "hello app"
   homepage "https://github.com/rvigo/homebrew-hello"
-  version "1.8.1"
+  version "1.8.2"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/rvigo/hello/releases/download/v1.8.1/hello_1.8.1_darwin_arm64.tar.gz"
-      sha256 "c206a398a3a9928b56478eb0bc5435806d772130ee035e5d34a8a1b1d015b871"
+    if Hardware::CPU.intel?
+      url "https://github.com/rvigo/hello/releases/download/v1.8.2/hello_1.8.2_darwin_x86_64.tar.gz"
+      sha256 "193678c1d51cf15237b9cc9ebfa7b4a950d908eeac7ce6c7e6b15c9d870d8e9a"
 
       def install
         bin.install "hello"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/rvigo/hello/releases/download/v1.8.1/hello_1.8.1_darwin_x86_64.tar.gz"
-      sha256 "bd48783637aa710abf1f52cb34ec4bab052f2f6df5690dada130b0e3d111bb02"
+    if Hardware::CPU.arm?
+      url "https://github.com/rvigo/hello/releases/download/v1.8.2/hello_1.8.2_darwin_arm64.tar.gz"
+      sha256 "f39607c5e0633529a0867394bbd928d707a009828a7d264b3cf9a3cb22e309d4"
 
       def install
         bin.install "hello"
@@ -27,17 +27,17 @@ class Hello < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/rvigo/hello/releases/download/v1.8.1/hello_1.8.1_linux_x86_64.tar.gz"
-      sha256 "4cf493d5b9605f6cfb2fa6fad1849d94072d034aa8878a1775f67c71a8245b5d"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/rvigo/hello/releases/download/v1.8.2/hello_1.8.2_linux_arm64.tar.gz"
+      sha256 "82f56abcba79819fb13a7fdc8b73ed5968548d7c47d55eed036f020cc2d8223e"
 
       def install
         bin.install "hello"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/rvigo/hello/releases/download/v1.8.1/hello_1.8.1_linux_arm64.tar.gz"
-      sha256 "ddbbd9279b098e997ae73e83f6f8d5d9abdd25b84c0af3e26f380eefe10b7f20"
+    if Hardware::CPU.intel?
+      url "https://github.com/rvigo/hello/releases/download/v1.8.2/hello_1.8.2_linux_x86_64.tar.gz"
+      sha256 "d7ea7fd819f3830aad8b2598daaabd5e92f9a4b74d6f6897aba4fe228a2af35c"
 
       def install
         bin.install "hello"
