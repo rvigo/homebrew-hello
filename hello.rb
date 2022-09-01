@@ -5,20 +5,20 @@
 class Hello < Formula
   desc "hello app"
   homepage "https://github.com/rvigo/homebrew-hello"
-  version "1.11.0"
+  version "1.11.1"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/rvigo/hello/releases/download/v1.11.0/hello_1.11.0_darwin_arm64.tar.gz"
-      sha256 "f56b4707e25c3165fbe87b6bf21ca53f0ad9a2659e7d6c1fdafc15089953adde"
+      url "https://github.com/rvigo/hello/releases/download/v1.11.1/hello_1.11.1_darwin_arm64.tar.gz"
+      sha256 "fcc2740d5ebd2b02a4853d9ce501e07c15a35946b00b145f7352b948b6f532eb"
 
       def install
         bin.install "hello"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/rvigo/hello/releases/download/v1.11.0/hello_1.11.0_darwin_x86_64.tar.gz"
-      sha256 "4306746dd620f2d3a33979c0dbace55cb4da9fe723778a519813e3c7e64062e2"
+      url "https://github.com/rvigo/hello/releases/download/v1.11.1/hello_1.11.1_darwin_x86_64.tar.gz"
+      sha256 "6ef039d0fc7bf840371b82bb767cd8a9286ed8b22ccfc10303aaba7355d0b990"
 
       def install
         bin.install "hello"
@@ -27,17 +27,17 @@ class Hello < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/rvigo/hello/releases/download/v1.11.0/hello_1.11.0_linux_x86_64.tar.gz"
-      sha256 "cb17af51a4c87f41fe8d240476a579b07ff12be53cda637da6abf1e04f3ea8cc"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/rvigo/hello/releases/download/v1.11.1/hello_1.11.1_linux_arm64.tar.gz"
+      sha256 "7210bb8a86f318ef4f8cb98d99a4b3f8a4e8705a8a690fbdf868e81476b0e644"
 
       def install
         bin.install "hello"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/rvigo/hello/releases/download/v1.11.0/hello_1.11.0_linux_arm64.tar.gz"
-      sha256 "23a145ae0479ad48599106d465f668b84268aa5ade22cf94c4e3874fcacc12c2"
+    if Hardware::CPU.intel?
+      url "https://github.com/rvigo/hello/releases/download/v1.11.1/hello_1.11.1_linux_x86_64.tar.gz"
+      sha256 "2f12d7fc57d9bdddfa270c5873cc90bdd830e288f39e1ed2a90ceadd22c3de0b"
 
       def install
         bin.install "hello"
