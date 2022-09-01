@@ -5,20 +5,20 @@
 class Hello < Formula
   desc "hello app"
   homepage "https://github.com/rvigo/homebrew-hello"
-  version "1.10.1"
+  version "1.11.0"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/rvigo/hello/releases/download/v1.10.1/hello_1.10.1_darwin_arm64.tar.gz"
-      sha256 "bf35c653787ced33dc803df2026c55fe6c526cc151d1037e51d172a30bbcb535"
+      url "https://github.com/rvigo/hello/releases/download/v1.11.0/hello_1.11.0_darwin_arm64.tar.gz"
+      sha256 "1467945a79143fb30b7a71131f17c5b494a77854fd02620eaaa55ca4b2e45259"
 
       def install
         bin.install "hello"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/rvigo/hello/releases/download/v1.10.1/hello_1.10.1_darwin_x86_64.tar.gz"
-      sha256 "11c55f3462579ab3df850809912319de0bca57c6c8c0cd79888f2f888be55f8c"
+      url "https://github.com/rvigo/hello/releases/download/v1.11.0/hello_1.11.0_darwin_x86_64.tar.gz"
+      sha256 "8c7d2738939838965291abc23aefbee7927f2ee25bdca6f42973c41bb51bfd4d"
 
       def install
         bin.install "hello"
@@ -28,16 +28,16 @@ class Hello < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/rvigo/hello/releases/download/v1.10.1/hello_1.10.1_linux_arm64.tar.gz"
-      sha256 "60ee418c107432208368d5d006e02813af58640dd4c9fe35dade106fd877e3a1"
+      url "https://github.com/rvigo/hello/releases/download/v1.11.0/hello_1.11.0_linux_arm64.tar.gz"
+      sha256 "a04e70d8064c560b9ddb6dd438fddd5a07c82b12c436acf0c5a5a08e2ed782cd"
 
       def install
         bin.install "hello"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/rvigo/hello/releases/download/v1.10.1/hello_1.10.1_linux_x86_64.tar.gz"
-      sha256 "6c926400306cfa0cfa6d4389417a1327c3a042f64e67a3bba7b1b1dc6d6e8a97"
+      url "https://github.com/rvigo/hello/releases/download/v1.11.0/hello_1.11.0_linux_x86_64.tar.gz"
+      sha256 "5ed218b7b3e90b5cb8ba531d2eb3fcdbf6592acd5fb675d8d006e65a92f603f2"
 
       def install
         bin.install "hello"
