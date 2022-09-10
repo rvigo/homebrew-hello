@@ -5,46 +5,46 @@
 class Hello < Formula
   desc "hello app"
   homepage "https://github.com/rvigo/homebrew-hello"
-  version "1.11.6"
+  version "1.11.7"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/rvigo/hello/releases/download/v1.11.6/hello_darwin_x86_64.tar.gz"
-      sha256 "83bd3bb652ae290e9560745fb7c5ee35066948aa64a77ed4fb703c72b4ffbfb6"
+    if Hardware::CPU.arm?
+      url "https://github.com/rvigo/hello/releases/download/v1.11.7/hello_darwin_arm64.tar.gz"
+      sha256 "278c1e39ee2c5d73d203e7701b71ee82aadf36643d8af880d326e64dce2f3bd3"
 
       def install
         bin.install "hello"
-        zsh_completion.install "completion/zsh/_hello" => "_hello"
+        zsh_completion.install "completions/zsh/_hello" => "_hello"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/rvigo/hello/releases/download/v1.11.6/hello_darwin_arm64.tar.gz"
-      sha256 "5f032f6c84c87a317e2b23a995cc8a881e177e76f8a429301a8165b6f7e140dd"
+    if Hardware::CPU.intel?
+      url "https://github.com/rvigo/hello/releases/download/v1.11.7/hello_darwin_x86_64.tar.gz"
+      sha256 "c0b495cab07afc15dfc9dace0ed25f973f71c75784c967ec259f5fba525df834"
 
       def install
         bin.install "hello"
-        zsh_completion.install "completion/zsh/_hello" => "_hello"
+        zsh_completion.install "completions/zsh/_hello" => "_hello"
       end
     end
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/rvigo/hello/releases/download/v1.11.6/hello_linux_x86_64.tar.gz"
-      sha256 "3439d17dfa6ef9996655dff738c4f8d8982ec37f9d412e86c04db5e2012dc09e"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/rvigo/hello/releases/download/v1.11.7/hello_linux_arm64.tar.gz"
+      sha256 "ef0864392848795f174ea2961c709c28a5e75074c6ae814b9751bc77d612191d"
 
       def install
         bin.install "hello"
-        zsh_completion.install "completion/zsh/_hello" => "_hello"
+        zsh_completion.install "completions/zsh/_hello" => "_hello"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/rvigo/hello/releases/download/v1.11.6/hello_linux_arm64.tar.gz"
-      sha256 "c4ee8f417ed1d86bcdf682ab02db79cd5b8c769fce5fbb79d4235872343b9d95"
+    if Hardware::CPU.intel?
+      url "https://github.com/rvigo/hello/releases/download/v1.11.7/hello_linux_x86_64.tar.gz"
+      sha256 "26884645311ccd4ac19aefb5e086f0a0dd195b31f3bf71154a9a61e27eeee161"
 
       def install
         bin.install "hello"
-        zsh_completion.install "completion/zsh/_hello" => "_hello"
+        zsh_completion.install "completions/zsh/_hello" => "_hello"
       end
     end
   end
