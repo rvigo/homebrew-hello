@@ -5,21 +5,21 @@
 class Hello < Formula
   desc "hello app"
   homepage "https://github.com/rvigo/homebrew-hello"
-  version "1.11.3"
+  version "1.11.6"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/rvigo/hello/releases/download/v1.11.3/hello_1.11.3_darwin_arm64.tar.gz"
-      sha256 "2234d124490facbc858faba87ec545b0432ce7c3ff0ba112e1058718bcdd71dd"
+    if Hardware::CPU.intel?
+      url "https://github.com/rvigo/hello/releases/download/v1.11.6/hello_darwin_x86_64.tar.gz"
+      sha256 "83bd3bb652ae290e9560745fb7c5ee35066948aa64a77ed4fb703c72b4ffbfb6"
 
       def install
         bin.install "hello"
         zsh_completion.install "completion/zsh/_hello" => "_hello"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/rvigo/hello/releases/download/v1.11.3/hello_1.11.3_darwin_x86_64.tar.gz"
-      sha256 "394a230622ed779a269e426033aea01b8f8e2a26eb66971e7a898d7d1502c834"
+    if Hardware::CPU.arm?
+      url "https://github.com/rvigo/hello/releases/download/v1.11.6/hello_darwin_arm64.tar.gz"
+      sha256 "5f032f6c84c87a317e2b23a995cc8a881e177e76f8a429301a8165b6f7e140dd"
 
       def install
         bin.install "hello"
@@ -29,18 +29,18 @@ class Hello < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/rvigo/hello/releases/download/v1.11.3/hello_1.11.3_linux_arm64.tar.gz"
-      sha256 "cbf2db6cb1eda4c20d7b8561eb2042e1286cf13fbff4b97babf620db3b2e0943"
+    if Hardware::CPU.intel?
+      url "https://github.com/rvigo/hello/releases/download/v1.11.6/hello_linux_x86_64.tar.gz"
+      sha256 "3439d17dfa6ef9996655dff738c4f8d8982ec37f9d412e86c04db5e2012dc09e"
 
       def install
         bin.install "hello"
         zsh_completion.install "completion/zsh/_hello" => "_hello"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/rvigo/hello/releases/download/v1.11.3/hello_1.11.3_linux_x86_64.tar.gz"
-      sha256 "c25bf5b36366cd7a0a339b2b51fbde5c7dccbb652ad593d7ce5fc26edf51f8a7"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/rvigo/hello/releases/download/v1.11.6/hello_linux_arm64.tar.gz"
+      sha256 "c4ee8f417ed1d86bcdf682ab02db79cd5b8c769fce5fbb79d4235872343b9d95"
 
       def install
         bin.install "hello"
